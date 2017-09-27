@@ -1,4 +1,4 @@
-<div id="search-component">
+<!-- <div id="search-component">
   <h4>Hero Search</h4>
   <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
   <div>
@@ -7,4 +7,14 @@
       {{hero.name}}
     </div>
   </div>
-</div>
+</div> -->
+<form>
+  <md-form-field>
+    <input mdInput placeholder="Search hero" aria-label="Search hero" [mdAutocomplete]="auto" [formControl]="searchCtrl">
+      <md-autocomplete #auto="mdAutocomplete">
+      <md-option *ngFor="let hero of filteredHeroes | async" [value]="hero.name" (click)="gotoDetail(hero)">
+        {{ hero.name }}
+      </md-option>
+    </md-autocomplete>
+  </md-form-field>
+</form>

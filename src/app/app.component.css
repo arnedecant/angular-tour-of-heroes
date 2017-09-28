@@ -11,3 +11,6 @@ h2 {
 .mat-toolbar .mat-toolbar-row {
   justify-content: flex-start;
 }
+.content {
+	padding: 0 16px;
+}

@@ -7,6 +7,12 @@
 body {
  margin: 0;
  font-family: Roboto, sans-serif;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+body.mat-app-background {
+	background-color: #ffffff;
 }
 md-card {
  max-width: 94%;
@@ -15,4 +21,9 @@ md-card {
 }
 md-toolbar-row {
  justify-content: space-between;
+}
+
+.container {
+	width: 100%;
+	max-width: 768px;
 }

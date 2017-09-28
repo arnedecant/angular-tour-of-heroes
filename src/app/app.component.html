@@ -1,21 +1,20 @@
 <md-toolbar color="primary" class="mat-elevation-z6">
 	<span>{{title}}</span>
-	<hero-search></hero-search>
-	<nav>
+	<!-- <nav>
 		<a md-button routerLink="/dashboard">Dashboard</a>
 		<a md-button routerLink="/heroes">Heroes</a>
-	</nav>
+	</nav> -->
 	<!-- <div class="flex-spacer"></div> -->
-	<!-- <button md-icon-button [md-menu-trigger-for]="menu">
+	<button md-icon-button [md-menu-trigger-for]="menu">
 		<md-icon>more_vert</md-icon>
-	</button> -->
+	</button>
 </md-toolbar>
 
-<!-- <md-menu x-position="before" #menu="mdMenu">
+<md-menu x-position="before" #menu="mdMenu">
 	<button md-menu-item routerLink="/dashboard">Dashboard</button>
 	<button md-menu-item routerLink="/heroes">Heroes</button>
-</md-menu> -->
+</md-menu>
 
-<md-card>
+<div class="content">
 	<router-outlet></router-outlet>
-</md-card>
+</div>

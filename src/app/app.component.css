@@ -14,3 +14,21 @@ h2 {
 .content {
 	padding: 0 16px;
 }
+
+md-sidenav-container {
+	height: 100%;
+}
+
+.menu-search {
+	padding: 16px;
+}
+
+md-sidenav {
+  width: 250px;
+}
+
+md-sidenav .title {
+	font-size: 1.6em;
+	margin: 16px;
+	display: block;
+}

@@ -1,20 +1,43 @@
-<md-toolbar color="primary" class="mat-elevation-z6">
-	<span>{{title}}</span>
-	<!-- <nav>
-		<a md-button routerLink="/dashboard">Dashboard</a>
-		<a md-button routerLink="/heroes">Heroes</a>
-	</nav> -->
-	<!-- <div class="flex-spacer"></div> -->
-	<button md-icon-button [md-menu-trigger-for]="menu">
-		<md-icon>more_vert</md-icon>
-	</button>
-</md-toolbar>
+<md-sidenav-container class="example-container">
+	<md-toolbar color="primary" class="mat-elevation-z6">
+		<div class="example-sidenav-content">
+			<button type="button" md-icon-button (click)="sidenav.open()">
+				<md-icon>menu</md-icon>
+			</button>
+		</div>
 
-<md-menu x-position="before" #menu="mdMenu">
-	<button md-menu-item routerLink="/dashboard">Dashboard</button>
-	<button md-menu-item routerLink="/heroes">Heroes</button>
-</md-menu>
+		<span>{{title}}</span>
+		<!-- <nav>
+			<a md-button routerLink="/dashboard">Dashboard</a>
+			<a md-button routerLink="/heroes">Heroes</a>
+		</nav> -->
+		<!-- <div class="flex-spacer"></div> -->
+		<button md-icon-button [md-menu-trigger-for]="menu">
+			<md-icon>more_vert</md-icon>
+		</button>
+	</md-toolbar>
 
-<div class="content">
-	<router-outlet></router-outlet>
-</div>
+	<!-- <md-menu x-position="before" #menu="mdMenu">
+		<button md-menu-item routerLink="/dashboard">Dashboard</button>
+		<button md-menu-item routerLink="/heroes">Heroes</button>
+	</md-menu> -->
+
+	<md-menu x-position="before" #menu="mdMenu">
+		<a href="https://www.arnedecant.be/" target="_blank" md-menu-item>Website</a>
+		<a href="https://dev.arnedecant.be/" target="_blank" md-menu-item>Develop</a>
+		<a href="https://github.com/arnedecant" target="_blank" md-menu-item>Github</a>
+	</md-menu>
+
+	<div class="content">
+		<router-outlet></router-outlet>
+	</div>
+
+	<md-sidenav #sidenav class="example-sidenav">
+		<span class="title">{{title}}</span>
+		<button md-menu-item routerLink="/dashboard" (click)="sidenav.close()">Dashboard</button>
+		<button md-menu-item routerLink="/heroes" (click)="sidenav.close()">Heroes</button>
+		<div class="menu-search">
+			<hero-search></hero-search>
+		</div>
+	</md-sidenav>
+</md-sidenav-container>

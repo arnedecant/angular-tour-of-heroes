@@ -32,3 +32,6 @@ md-sidenav .title {
 	margin: 16px;
 	display: block;
 }
+.content {
+  height: calc(100% - 64px);
+}

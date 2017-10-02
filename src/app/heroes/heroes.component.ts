@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {DataSource} from '@angular/cdk/collections';
+import {Observable} from 'rxjs/Observable';
 import { Router } from '@angular/router';
 
 import { Hero } from '../hero/hero';
@@ -8,12 +10,16 @@ import { HeroService } from '../hero/hero.service';
 	selector: 'my-heroes',
 	templateUrl: './heroes.component.html',
 	styleUrls: ['./heroes.component.css'],
-	providers: []
+	providers: [],
+	encapsulation: ViewEncapsulation.None
 })
 
 export class HeroesComponent implements OnInit {
-	heroes: Hero[];
+	heroes: Hero[] = null;
 	selectedHero: Hero;
+	displayedColumns = ['id', 'name', 'actions'];
+	dataSource = new HeroesDataSource();
+	heroesDataSource = HeroesDataSource || null;
 
 	constructor(private heroService: HeroService, private router: Router) {}
 
@@ -49,5 +55,19 @@ export class HeroesComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.getHeroes();
+		this.dataSource = new HeroesDataSource();
+
+		console.log(this.dataSource);
 	}
+}
+
+let heroes: Hero[] = [];
+
+export class HeroesDataSource extends DataSource<any> {
+  /** Connect function called by the table to retrieve one stream containing the data to render. */
+  connect(): Observable<Hero[]> {
+    return Observable.of(heroes);
+  }
+
+  disconnect() {}
 }

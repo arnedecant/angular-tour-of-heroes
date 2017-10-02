@@ -1,19 +1,37 @@
-<h2>My Heroes</h2>
-<ul class="heroes">
-	<li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
-	  <span class="badge">{{hero.id}}</span>
-	  <span>{{hero.name}}</span>
-	  <button class="delete"
-	    (click)="delete(hero); $event.stopPropagation()">x</button>
-	</li>
-</ul>
-<div *ngIf="selectedHero">
-	<h2>
-		{{selectedHero.name | uppercase}} is my hero
-	</h2>
-	<button (click)="gotoDetail()">View Details</button>
-</div>
-<div>
-  <label>Hero name:</label> <input #heroName />
-  <button (click)="add(heroName.value); heroName.value=''">Add</button>
-</div>
+<md-tab-group>
+	<md-tab label="My heroes" class="my-heroes">
+		<section class="my-heroes">
+			<h2>My heroes</h2>
+			<!-- <md-table #table [dataSource]="heroes">
+				<ng-container mdColumnDef="id">
+					<md-header-cell *mdHeaderCellDef>Id</md-header-cell>
+					<md-cell *mdCellDef="let hero"> {{hero.id}} </md-cell>
+				</ng-container>
+			</md-table> -->
+			<ul class="heroes">
+				<li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
+				  <span class="badge">{{hero.id}}</span>
+				  <span>{{hero.name}}</span>
+				  <button class="delete"(click)="delete(hero); $event.stopPropagation()">x</button>
+				</li>
+			</ul>
+			<div *ngIf="selectedHero">
+				<h2>
+					{{selectedHero.name | uppercase}} is my hero
+				</h2>
+				<button (click)="gotoDetail()">View Details</button>
+			</div>
+		</section>
+	</md-tab>
+	<md-tab label="Add hero" class="add-hero">
+		<section class="add-hero">
+			<h2>Add hero</h2>
+			<form>
+				<md-form-field>
+					<input mdInput placeholder="Hero name" #heroName />
+				</md-form-field>
+				<button md-raised-button color="primary" (click)="add(heroName.value); heroName.value=''">Add</button>
+			</form>
+		</section>
+	</md-tab>
+</md-tab-group>

@@ -1,6 +1,9 @@
-import { Injectable }    from '@angular/core';
-import { Headers, Http } from '@angular/http';
-
+import { Component, Input } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/toPromise';
 
 import { Hero } from '../hero/hero';
@@ -11,9 +14,18 @@ export class HeroService {
 	private heroesUrl = 'api/heroes';  // URL to web api
 	private headers = new Headers({'Content-Type': 'application/json'});
 
-	constructor(private http: Http) { }
+	constructor(private http: Http) {}
+
+	public getJSON(): Observable<any> {
+    	return this.http.get("data/heroes.json").map((res:any) => console.log(res.json()));
+    }
 
 	getHeroes(): Promise<Hero[]> {
+		// let heroes;
+		// this.getJSON().subscribe(data => heroes = data, error => console.log(error));
+		// // this.getJSON().subscribe(data => heroes = data as Hero[], error => console.log(error));
+		// return heroes;
+
 		return this.http.get(this.heroesUrl)
 			.toPromise()
 			.then(response => response.json().data as Hero[])

@@ -1,5 +1,13 @@
 md-form-field {
-  width: 100%;
-  max-width: 300px;
-  display: block;
+	width: 100%;
+	max-width: 300px;
+	display: block;
+}
+
+md-form-field.long-field {
+	max-width: none;
+}
+
+md-form-field textarea {
+	height: 100px;
 }

@@ -7,6 +7,15 @@
 		<md-form-field>
 			<input mdInput placeholder="Name" [(ngModel)]="hero.name" name="name">
 		</md-form-field>
+		<md-form-field>
+			<input mdInput placeholder="Power" [(ngModel)]="hero.power" name="power">
+		</md-form-field>
+		<div class="mat-form-field-wrapper">
+			<md-checkbox [(ngModel)]="hero.flying" name="flying">Flying</md-checkbox>
+		</div>
+		<md-form-field class="long-field">
+			<textarea mdInput placeholder="Bio" [(ngModel)]="hero.bio" name="bio">{{hero.bio}}</textarea>
+		</md-form-field>
 	</form>
 	<button md-raised-button (click)="goBack()">Back</button>
 	<button md-raised-button color="primary" (click)="save()">Save</button>

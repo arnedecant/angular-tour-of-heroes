@@ -3,21 +3,21 @@
   "name": "Zero",
   "power": "Absolutely nothing",
   "flying": true,
-  "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere turpis in erat consectetur cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus ac massa pharetra ligula euismod commodo. Suspendisse eget cursus nulla. In est nulla, dapibus eu odio fringilla, ultrices luctus elit. Vestibulum mattis sit amet leo non finibus. Mauris viverra metus ipsum, dictum efficitur ipsum viverra et."
+  "bio": "What's this guy even doing in here? Get him out! Oh yeah, he can fly."
 },
 { 
   "id": 1, 
   "name": "Mr. Nice",
   "power": "Is way too nice",
   "flying": false,
-  "bio": "Donec id volutpat elit. Curabitur cursus dui et nunc rutrum, non porta risus elementum. Donec ultrices massa eget justo eleifend, sed mattis arcu auctor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse efficitur eu lorem nec ultrices. Phasellus semper lobortis turpis, suscipit vulputate massa pretium eu. Mauris elementum justo ut orci elementum semper. Curabitur eu mi rutrum, suscipit sapien tempor, laoreet ipsum. Morbi in justo in ligula vulputate pulvinar."
+  "bio": "His 'sorry' is literally on repeat. Oh, and... He avoids confrontation at all costs. How can this guy even be called a super hero?"
 },
 { 
   "id": 2, 
-  "name": "Narco",
+  "name": "Narcissus",
   "power": "Loves himself",
   "flying": false,
-  "bio": "Donec ligula est, ultricies laoreet massa quis, efficitur iaculis felis. Proin a urna rhoncus eros ullamcorper volutpat. Vestibulum id ex finibus, consequat eros eu, pulvinar nulla. Integer venenatis porta ante vulputate tincidunt. Integer vitae velit lorem. Duis accumsan bibendum sagittis. Aenean efficitur egestas sapien eget pharetra."
+  "bio": "Narcissus broke a mirror and put the shards into his arm, via hypodermic needle but it didn’t do him harm. A little self-reflection went a long, long way. Now he’s hiding in the cellar, scared to show the world his face."
 },
 { 
   "id": 3, 
@@ -80,7 +80,7 @@
   "name": "Shroom",
   "power": "Has mushrooms for fingers",
   "flying": true,
-  "bio": "Quisque eu eleifend lacus. Aliquam commodo accumsan metus, ut ullamcorper odio luctus a. Curabitur id elit eu dui semper ultricies. Integer non aliquam ex. Aliquam in convallis nunc. Ut molestie molestie ipsum at condimentum. Suspendisse nec interdum enim. Aenean at vestibulum magna, id tincidunt elit. Nunc eu ligula ornare, accumsan arcu ac, eleifend elit. Mauris lobortis ut nulla sit amet euismod. Maecenas fringilla ultricies ultrices. Nulla facilisi."
+  "bio": "It's all fun and games until he loses spores."
 },
 {
   "id": 12,
@@ -88,4 +88,11 @@
   "power": "Makes errors",
   "flying": false,
   "bio": "Not a terrorist, just a simple programmer."
+},
+{
+  "id": 13,
+  "name": "Pixel Dirk",
+  "power": "Consists of pure, liquid pixels",
+  "flying": false,
+  "bio": "Ever seen pure, liquid pixels? No? Prepare to be blown out of this world."
 }

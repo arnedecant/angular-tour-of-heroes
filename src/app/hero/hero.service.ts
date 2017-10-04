@@ -12,20 +12,20 @@ import { Hero } from '../hero/hero';
 @Injectable()
 export class HeroService {
 	private heroesUrl = 'api/heroes';  // URL to web api
+	private jsonUrl = 'data/heroes.json';
 	private headers = new Headers({'Content-Type': 'application/json'});
 
-	constructor(private http: Http) {}
+	constructor(private http: Http) {
+		var obj;
+		this.getJSON().subscribe(data => obj=data, error => console.log(error));
+		console.log(obj);
+	}
 
 	public getJSON(): Observable<any> {
     	return this.http.get("data/heroes.json").map((res:any) => console.log(res.json()));
     }
 
 	getHeroes(): Promise<Hero[]> {
-		// let heroes;
-		// this.getJSON().subscribe(data => heroes = data, error => console.log(error));
-		// // this.getJSON().subscribe(data => heroes = data as Hero[], error => console.log(error));
-		// return heroes;
-
 		return this.http.get(this.heroesUrl)
 			.toPromise()
 			.then(response => response.json().data as Hero[])

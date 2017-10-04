@@ -27,7 +27,7 @@ md-toolbar-row {
 
 .container {
 	width: 100%;
-	max-width: 768px;
+	/*max-width: 768px;*/
 	height: 100vh;
-	max-height: 768px;
+	/*max-height: 768px;*/
 }

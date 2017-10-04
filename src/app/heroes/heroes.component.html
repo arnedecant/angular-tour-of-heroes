@@ -2,12 +2,6 @@
 	<md-tab label="My heroes" class="my-heroes">
 		<section class="my-heroes">
 			<h2>My heroes</h2>
-			<!-- <md-table #table [dataSource]="heroes">
-				<ng-container mdColumnDef="id">
-					<md-header-cell *mdHeaderCellDef>Id</md-header-cell>
-					<md-cell *mdCellDef="let hero"> {{hero.id}} </md-cell>
-				</ng-container>
-			</md-table> -->
 			<ul class="heroes">
 				<li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
 				  <span class="badge">{{hero.id}}</span>
@@ -15,6 +9,30 @@
 				  <button class="delete"(click)="delete(hero); $event.stopPropagation()">x</button>
 				</li>
 			</ul>
+			<!-- <md-table #table [dataSource]="heroes">
+				<ng-container mdColumnDef="id">
+					<md-header-cell *mdHeaderCellDef>Id</md-header-cell>
+					<md-cell *mdCellDef="let hero"> {{hero.id}} </md-cell>
+				</ng-container>
+				<ng-container mdColumnDef="name">
+					<md-header-cell *mdHeaderCellDef>Name</md-header-cell>
+					<md-cell *mdCellDef="let hero"> {{hero.name}} </md-cell>
+				</ng-container>
+				<ng-container mdColumnDef="power">
+					<md-header-cell *mdHeaderCellDef>Power</md-header-cell>
+					<md-cell *mdCellDef="let hero"> {{hero.power}} </md-cell>
+				</ng-container>
+				<ng-container mdColumnDef="flying">
+					<md-header-cell *mdHeaderCellDef>Flying</md-header-cell>
+					<md-cell *mdCellDef="let hero"> {{hero.flying}} </md-cell>
+				</ng-container>
+				<ng-container mdColumnDef="actions">
+					<md-header-cell *mdHeaderCellDef>Actions</md-header-cell>
+					<md-cell *mdCellDef="let hero"></md-cell>
+				</ng-container>
+				<md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+    			<md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
+			</md-table> -->
 			<div *ngIf="selectedHero">
 				<h2>{{selectedHero.name | uppercase}} is my hero</h2>
 				<button (click)="gotoDetail()">View Details</button>

@@ -11,15 +11,15 @@ import { HeroService } from '../hero/hero.service';
 	templateUrl: './heroes.component.html',
 	styleUrls: ['./heroes.component.css'],
 	providers: [],
-	encapsulation: ViewEncapsulation.None
+	// encapsulation: ViewEncapsulation.None
 })
 
 export class HeroesComponent implements OnInit {
 	heroes: Hero[] = null;
 	selectedHero: Hero;
-	displayedColumns = ['id', 'name', 'actions'];
+	displayedColumns = ['id', 'name', 'power', 'flying', 'actions'];
 	dataSource = new HeroesDataSource();
-	heroesDataSource = HeroesDataSource || null;
+	// heroesDataSource = HeroesDataSource || null;
 
 	constructor(private heroService: HeroService, private router: Router) {}
 
@@ -56,8 +56,6 @@ export class HeroesComponent implements OnInit {
 	ngOnInit(): void {
 		this.getHeroes();
 		this.dataSource = new HeroesDataSource();
-
-		console.log(this.dataSource);
 	}
 }
 
